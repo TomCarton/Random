@@ -14,10 +14,9 @@ void RenderFrenchFlag(unsigned int width, unsigned int height, unsigned char *bu
         {
                 unsigned int x = k % width;
                 unsigned int y = k / width;
-                unsigned int p = (y * width + x) * 3;
 
-                buffer[p + 0] = x > third ? 255 : 0;
-                buffer[p + 1] = x > third &&  x < third2 ? 255 : 0;
-                buffer[p + 2] = x < third2 ? 255 : 0;
+                buffer[k * 3 + 0] = x > third ? 255 : 0;
+                buffer[k * 3 + 1] = x > third &&  x < third2 ? 255 : 0;
+                buffer[k * 3 + 2] = x < third2 ? 255 : 0;
         }
 }
