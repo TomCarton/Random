@@ -1,3 +1,3 @@
 // renderFlag.h
 
-void RenderFrenchFlag(unsigned int width, unsigned int height, unsigned char *buffer);
+void RenderFrenchFlag(unsigned char *buffer, unsigned int width, unsigned int height);

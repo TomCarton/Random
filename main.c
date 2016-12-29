@@ -15,10 +15,10 @@ int main(int argc, char *argv[])
 {
         unsigned char image[kWidth * kHeight * 3];
 
-        RenderFrenchFlag(kWidth, kHeight, image);
+        RenderFrenchFlag(image, kWidth, kHeight);
         SaveImageTGA("result/flag.tga", image, kWidth, kHeight);
 
-        RenderMandelbrot(kWidth, kHeight, image);
+        RenderMandelbrot(image, kWidth, kHeight);
         SaveImageTGA("result/mandelbrot.tga", image, kWidth, kHeight);
 
         return 0;

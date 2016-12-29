@@ -16,13 +16,8 @@ static int Mandelbrot(double x, double y)
 	double zi = 0;
 
 	unsigned int i;
-	for (i = 0; i < kIterations; ++i)
+	for (i = 0; i < kIterations && zr * zr + zi * zi <= 4; ++i)
 	{
-		if (zr * zr + zi * zi > 4)
-		{
-			break;			
-		}
-
 		double temp = zr * zr - zi * zi + x;
 		zi = 2 * zr * zi + y;
 		zr = temp;
@@ -33,7 +28,7 @@ static int Mandelbrot(double x, double y)
 	return (int)(pow(j, 0.6) * 255 + 0.5) << 16 | (int)(pow(j, 0.3) * 255 + 0.5) <<  8 | (int)(pow(j, 0.1) * 255 + 0.5) <<  0;
 }
 
-void RenderMandelbrot(unsigned int width, unsigned int height, unsigned char *buffer)
+void RenderMandelbrot(unsigned char *buffer, unsigned int width, unsigned int height)
 {
 	for (unsigned int k = 0; k < width * height; ++k)
     {

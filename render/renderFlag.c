@@ -5,7 +5,7 @@
 #include "renderFlag.h"
 
 
-void RenderFrenchFlag(unsigned int width, unsigned int height, unsigned char *buffer)
+void RenderFrenchFlag(unsigned char *buffer, unsigned int width, unsigned int height)
 {
         unsigned int third = width / 3;
         unsigned int third2 = third << 1;
