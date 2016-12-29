@@ -15,7 +15,8 @@ int main(int argc, char *argv[])
         unsigned char image[kWidth * kHeight * 3];
         RenderFrenchFlag(kWidth, kHeight, image);
 
-        SaveImage("flag.ppm", image, kWidth, kHeight);
+        SaveImageTGA("flag.tga", image, kWidth, kHeight);
+        SaveImagePPM("flag.ppm", image, kWidth, kHeight);
 
         return 0;
 }

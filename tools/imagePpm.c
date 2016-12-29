@@ -1,4 +1,4 @@
-// image.c
+// imagePPM.c
 //
 
 #include <stdio.h>
@@ -6,7 +6,7 @@
 #include "image.h"
 
 
-void SaveImage(char *filename, unsigned char *image, int width, int height)
+void SaveImagePPM(char *filename, unsigned char *image, int width, int height)
 {
 	FILE *outputFile = fopen(filename, "w");
 
