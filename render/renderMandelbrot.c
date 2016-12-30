@@ -6,7 +6,7 @@
 
 static const int kMaxIterations = 1000;
 
-static const double kMinX = -2.3, kMaxX = 0.66;
+static const double kMinX = -2.1, kMaxX = 0.93;
 static const double kMinY = -1.33, kMaxY = 1.33;
 
 

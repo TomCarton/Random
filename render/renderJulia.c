@@ -4,7 +4,10 @@
 #include <math.h>
 
 
-static const int kMaxIterations = 300;
+static const int kMaxIterations = 500;
+
+static const double kMinX = -1.44, kMaxX = 1.44;
+static const double kMinY = -1.17, kMaxY = 1.17;
 
 
 static int Julia(double zr, double zi)
@@ -29,17 +32,15 @@ static int Julia(double zr, double zi)
 
 void RenderJulia(unsigned char *buffer, unsigned int width, unsigned int height)
 {
-  double zoom = 1, moveX = 0, moveY = 0;
-
   for (unsigned int k = 0; k < width * height; ++k)
-    {
-        unsigned int x = k % width;
-        unsigned int y = k / width;
-        
-        int pix = Julia(1.5 * (x - width / 2) / (0.5 * zoom * width) + moveX, (y - height / 2) / (0.5 * zoom * height) + moveY);
+  {
+      unsigned int x = k % width;
+      unsigned int y = k / width;
+      
+      int pix = Julia(kMinX + (x + 0.5) / width * (kMaxX - kMinX), kMaxY - (y + 0.5) / height * (kMaxY - kMinY));
 
-        buffer[k * 3 + 0] = (pix >> 16);
-        buffer[k * 3 + 1] = (pix >> 8);
-        buffer[k * 3 + 2] = pix;
-    }
+      buffer[k * 3 + 0] = (pix >> 16);
+      buffer[k * 3 + 1] = (pix >> 8);
+      buffer[k * 3 + 2] = pix;
+  }
 }
