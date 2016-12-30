@@ -4,8 +4,7 @@
 
 #include "tools/image.h"
 #include "render/renderFlag.h"
-#include "render/renderMandelbrot.h"
-#include "render/renderJulia.h"
+#include "render/renderFractal.h"
 
 
 static const unsigned int kWidth = 800;
@@ -19,10 +18,20 @@ int main(int argc, char *argv[])
         RenderFrenchFlag(image, kWidth, kHeight);
         SaveImageTGA("result/flag.tga", image, kWidth, kHeight);
 
-        RenderMandelbrot(image, kWidth, kHeight);
+        FractalCoordinates coords;
+
+		coords.iterations = 500;
+
+		coords.xMin = -2.1; coords.xMax = 0.93;
+		coords.yMin = -1.33; coords.yMax = 1.33;
+ 
+        RenderMandelbrot(coords, image, kWidth, kHeight);
         SaveImageTGA("result/mandelbrot.tga", image, kWidth, kHeight);
 
-        RenderJulia(image, kWidth, kHeight);
+		coords.xMin = -1.44; coords.xMax = 1.44;
+		coords.yMin = -1.17; coords.yMax = 1.17;
+ 
+        RenderJulia(coords, image, kWidth, kHeight);
         SaveImageTGA("result/julia.tga", image, kWidth, kHeight);
 
         return 0;
