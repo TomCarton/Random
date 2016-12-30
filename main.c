@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
         FractalCoordinates coords;
 
-		coords.iterations = 500;
+		coords.iterations = 300;
 
 		coords.xMin = -2.1; coords.xMax = 0.93;
 		coords.yMin = -1.33; coords.yMax = 1.33;
