@@ -22,16 +22,18 @@ int main(int argc, char *argv[])
 
 		coords.iterations = 300;
 
+		coords.mode = FractalModeMandelbrot;
 		coords.xMin = -2.1; coords.xMax = 0.93;
 		coords.yMin = -1.33; coords.yMax = 1.33;
  
-        RenderMandelbrot(coords, image, kWidth, kHeight);
+        RenderFractal(coords, image, kWidth, kHeight);
         SaveImageTGA("result/mandelbrot.tga", image, kWidth, kHeight);
 
+		coords.mode = FractalModeJulia;
 		coords.xMin = -1.44; coords.xMax = 1.44;
 		coords.yMin = -1.17; coords.yMax = 1.17;
  
-        RenderJulia(coords, image, kWidth, kHeight);
+        RenderFractal(coords, image, kWidth, kHeight);
         SaveImageTGA("result/julia.tga", image, kWidth, kHeight);
 
         return 0;

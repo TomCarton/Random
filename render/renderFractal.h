@@ -1,7 +1,15 @@
 // renderFractal.h
 
+typedef enum
+{
+	FractalModeMandelbrot,
+	FractalModeJulia,
+} FractalMode;
+
 typedef struct
 {
+	FractalMode mode;	
+	
 	double xMin, xMax;
 	double yMin, yMax;
 
@@ -9,6 +17,4 @@ typedef struct
 
 } FractalCoordinates;
 
-
-void RenderMandelbrot(FractalCoordinates coords, unsigned char *buffer, unsigned int width, unsigned int height);
-void RenderJulia(FractalCoordinates coords, unsigned char *buffer, unsigned int width, unsigned int height);
+void RenderFractal(FractalCoordinates coords, unsigned char *buffer, unsigned int width, unsigned int height);
