@@ -1,18 +1,22 @@
 # Rendering
 Some random rendering code made from scratch to ensure reflexes are still there ;)
 
-**Mandelbrot**
+#Fractals
 
-![](https://github.com/TomCarton/Rendering/blob/master/result/mandelbrot.png)
++ **Mandelbrot set**
 
-**Julia**
+	![](https://github.com/TomCarton/Rendering/blob/master/result/mandelbrot.png)
 
-![](https://github.com/TomCarton/Rendering/blob/master/result/julia.png)
++ **Julia set**
 
-**Julia 2**
+	![](https://github.com/TomCarton/Rendering/blob/master/result/julia.png)
 
-![](https://github.com/TomCarton/Rendering/blob/master/result/julia2.png)
++ **Julia set #2**
 
-**Flag**
+	![](https://github.com/TomCarton/Rendering/blob/master/result/julia2.png)
 
-![](https://github.com/TomCarton/Rendering/blob/master/result/flag.png)
+#Simple
+
++ **Flag**
+
+	![](https://github.com/TomCarton/Rendering/blob/master/result/flag.png)
