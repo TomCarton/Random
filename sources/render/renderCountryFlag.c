@@ -1,23 +1,26 @@
-// renderFlag.c
+// renderCountryFlag.c
+//
+// written by Thomas CARTON
+//
 
 #include <stdio.h>
 
-#include "renderFlag.h"
+#include "renderCountryFlag.h"
 
 
-void RenderFlag(unsigned int type, unsigned char *buffer, unsigned int width, unsigned int height)
+void RenderFlag(CountryFlagType type, unsigned char *buffer, unsigned int width, unsigned int height)
 {
 	switch (type)
 	{
-		case 'FR':
+		case kCountryFlagFrench:
 			RenderFrenchFlag(buffer, width, height);
 			break;
 
-		case 'JP':
+		case kCountryFlagJapanese:
 			RenderJapaneseFlag(buffer, width, height);
 			break;
 
-		case 'US':
+		case kCountryFlagAmerican:
 			RenderAmericanFlag(buffer, width, height);
 			break;
 	}
@@ -31,7 +34,6 @@ void RenderFrenchFlag(unsigned char *buffer, unsigned int width, unsigned int he
 
 	for (unsigned int k = 0; k < width * height; ++k)
 	{
-		unsigned int y = k / width;
 		unsigned int x = k % width;
 
 		*buffer++ = x > left ? 255 : 0;
@@ -58,14 +60,15 @@ void RenderJapaneseFlag(unsigned char *buffer, unsigned int width, unsigned int 
 
 void RenderAmericanFlag(unsigned char *buffer, unsigned int width, unsigned int height)
 {
-	unsigned int r2 = height * height * 0.09;
+	unsigned int rw = width >> 1;
+	unsigned int rh = 7 * height / 13;
 
 	for (unsigned int k = 0; k < width * height; ++k)
 	{
 		unsigned int y = k / width;
 		unsigned int x = k % width;
 
-		if (x < width >> 1 && y <= 7 * height / 13)
+		if (x <= rw && y <= rh)
 		{
 			*buffer++ = 60;
 			*buffer++ = 60;

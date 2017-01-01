@@ -1,5 +1,7 @@
 // imagePPM.c
 //
+// written by Thomas CARTON
+//
 
 #include <stdio.h>
 

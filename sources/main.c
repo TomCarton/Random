@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 #include "tools/image.h"
-#include "render/renderFlag.h"
+#include "render/renderCountryFlag.h"
 #include "render/renderFractal.h"
 
 
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 {
         unsigned char *image = malloc(kWidth * kHeight * 3);
 
-        // Flags
+        // Country flags
         RenderFrenchFlag(image, kFlagWidth, kFlagHeight);
         SaveImageTGA("result/flagFR.tga", image, kFlagWidth, kFlagHeight);
 

@@ -27,7 +27,7 @@ $(OBJ_DIR)/%.o: sources/render/%.c
 	@echo Compile "$@"...
 	$(CC) $(CC_FLAGS) -c $^ -o $@
 
-$(filter %.o,$(C_FILES)): %.o: %.c
+$(filter %.o,$(C_FILES)): %.o: %.c %.h
 	@echo Compile "$<" to "$@"...
 	$(CC) $(CC_FLAGS) -c $< -o $@
 

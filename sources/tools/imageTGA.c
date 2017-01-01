@@ -1,5 +1,7 @@
 // imageTGA.c
 //
+// written by Thomas CARTON
+//
 
 #include <stdio.h>
 #include <stdlib.h>

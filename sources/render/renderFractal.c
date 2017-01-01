@@ -1,5 +1,7 @@
 // renderFractal.c
 //
+// written by Thomas CARTON
+//
 
 #include <math.h>
 
@@ -8,9 +10,9 @@
 
 static unsigned int FractalEscape(double zr, double zi, double cr, double ci, int maxIterations)
 {
-	unsigned int k = 0;
+	unsigned int age = 0;
 	
-	while (k++ < maxIterations && zr * zr + zi * zi <= 2 * 2)
+	while (age++ < maxIterations && zr * zr + zi * zi <= 2 * 2)
 	{
 		double r = zr;
 		double i = zi;
@@ -19,7 +21,7 @@ static unsigned int FractalEscape(double zr, double zi, double cr, double ci, in
 		zi = 2 * r * i + ci;
 	}
 
-	return k - 1;
+	return age - 1;
 }
 
 void RenderFractal(FractalParameters params, unsigned char *buffer, unsigned int width, unsigned int height)
