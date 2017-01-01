@@ -8,13 +8,13 @@ typedef enum
 
 typedef struct
 {
-	FractalMode mode;	
-	
+	FractalMode mode;
+
 	double xMin, xMax;
 	double yMin, yMax;
 
 	int iterations;
 
-} FractalCoordinates;
+} FractalParameters;
 
-void RenderFractal(FractalCoordinates coords, unsigned char *buffer, unsigned int width, unsigned int height);
+void RenderFractal(FractalParameters params, unsigned char *buffer, unsigned int width, unsigned int height);
