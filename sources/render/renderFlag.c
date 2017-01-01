@@ -65,7 +65,7 @@ void RenderAmericanFlag(unsigned char *buffer, unsigned int width, unsigned int 
 		unsigned int y = k / width;
 		unsigned int x = k % width;
 
-		if (x < width >> 1 && y < 7 * height / 13)
+		if (x < width >> 1 && y <= 7 * height / 13)
 		{
 			*buffer++ = 60;
 			*buffer++ = 60;
