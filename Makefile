@@ -1,5 +1,7 @@
 # Makefile
 
+TARGET := renderer
+
 OBJ_DIR := obj
 
 C_FILES := $(wildcard sources/*.c) $(wildcard sources/*/*.c)
@@ -10,7 +12,8 @@ CC_FLAGS = -Wall -O2
 
 
 all: $(OBJ_FILES)
-	$(CC) $(CC_FLAGS) $^ -o renderer
+	$(CC) $(CC_FLAGS) $^ -o $(TARGET)
+
 
 $(OBJ_DIR)/%.o: sources/%.c
 	@echo Compile "$@"...
@@ -39,37 +42,10 @@ $(OBJ_DIR):
 .PHONY: clean
 clean:
 	rm -rf $(OBJ_DIR)
+	rm $(TARGET)
 
 
 .PHONY: info
 info:
 	@echo sources: $(C_FILES)
 	@echo objects: $(OBJ_FILES)
-
-# $(OBJ_FILES): $(C_FILES)
-# 	@mkdir -p "$(@D)"
-# #	$(CC) $(CC_FLAGS) -c $< -o $@
-
-# renderer: $(OBJ_FILES)
-# 	@echo object files "$(OBJ_FILES)"
-# #	$(CC) -o $@ $^
-
-# all: renderer
-
-# clean:
-# 	rm -rf $(OBJ_DIR)
-
-
-
-# OBJDIR := objdir
-# OBJS := $(addprefix $(OBJDIR)/,foo.o bar.o baz.o)
-
-# $(OBJDIR)/%.o : %.c
-#         $(COMPILE.c) $(OUTPUT_OPTION) $<
-
-# all: $(OBJS)
-
-# $(OBJS): | $(OBJDIR)
-
-# $(OBJDIR):
-#         mkdir $(OBJDIR)
