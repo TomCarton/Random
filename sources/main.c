@@ -11,14 +11,21 @@
 static const unsigned int kWidth = 800;
 static const unsigned int kHeight = 600;
 
+static const unsigned int kFlagWidth = 48;
+static const unsigned int kFlagHeight = 32;
+
 
 int main(int argc, char *argv[])
 {
         unsigned char *image = malloc(kWidth * kHeight * 3);
 
         // Flag
-        RenderFrenchFlag(image, 48, 32);
-        SaveImageTGA("result/flag.tga", image, 48, 32);
+        RenderFrenchFlag(image, kFlagWidth, kFlagHeight);
+        SaveImageTGA("result/flagFR.tga", image, kFlagWidth, kFlagHeight);
+
+        RenderJapaneseFlag(image, kFlagWidth, kFlagHeight);
+        SaveImageTGA("result/flagJP.tga", image, kFlagWidth, kFlagHeight);
+
 
         // Fractals
         FractalParameters params;

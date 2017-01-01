@@ -15,8 +15,12 @@ Some random rendering code made from scratch to ensure reflexes are still there 
 
 	![](https://github.com/TomCarton/Rendering/blob/master/result/julia2.png)
 
-#Simple
+#Flags
 
-+ **Flag**
++ **French flag**
 
-	![](https://github.com/TomCarton/Rendering/blob/master/result/flag.png)
+	![](https://github.com/TomCarton/Rendering/blob/master/result/flagFR.png)
+
++ **Japanese flag**
+
+	![](https://github.com/TomCarton/Rendering/blob/master/result/flagJP.png)
