@@ -1,4 +1,10 @@
 ## Ignore unwanted files
 
 # Build and intermediates directories
+_*/
+build/
 obj/
+
+# Temporary files
+*\ copy
+*\ copy.*
