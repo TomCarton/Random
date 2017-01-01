@@ -1,0 +1,4 @@
+## Ignore unwanted files
+
+# Build and intermediates directories
+obj/
