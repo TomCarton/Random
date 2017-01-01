@@ -4,6 +4,7 @@
 _*/
 build/
 obj/
+renderer
 
 # Temporary files
 *\ copy
