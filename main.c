@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
         unsigned char *image = malloc(kWidth * kHeight * 3);
 
         // Flag
-        RenderFrenchFlag(image, kWidth, kHeight);
-        SaveImageTGA("result/flag.tga", image, kWidth, kHeight);
+        RenderFrenchFlag(image, 48, 32);
+        SaveImageTGA("result/flag.tga", image, 48, 32);
 
         // Fractals
         FractalParameters params;
