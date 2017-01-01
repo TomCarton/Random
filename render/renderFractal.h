@@ -9,7 +9,8 @@ typedef enum
 typedef struct
 {
 	FractalMode mode;
-
+	double cr, ci;
+	
 	double xMin, xMax;
 	double yMin, yMax;
 
