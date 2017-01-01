@@ -17,10 +17,5 @@ Some random rendering code made from scratch to ensure reflexes are still there 
 
 #Flags
 
-+ **French flag**
-
-	![](https://github.com/TomCarton/Rendering/blob/master/result/flagFR.png)
-
-+ **Japanese flag**
-
-	![](https://github.com/TomCarton/Rendering/blob/master/result/flagJP.png)
++ <kbd>![](https://github.com/TomCarton/Rendering/blob/master/result/flagFR.png)</kbd>
+<kbd>![](https://github.com/TomCarton/Rendering/blob/master/result/flagJP.png)</kbd>
