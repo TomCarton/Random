@@ -19,12 +19,15 @@ int main(int argc, char *argv[])
 {
         unsigned char *image = malloc(kWidth * kHeight * 3);
 
-        // Flag
+        // Flags
         RenderFrenchFlag(image, kFlagWidth, kFlagHeight);
         SaveImageTGA("result/flagFR.tga", image, kFlagWidth, kFlagHeight);
 
         RenderJapaneseFlag(image, kFlagWidth, kFlagHeight);
         SaveImageTGA("result/flagJP.tga", image, kFlagWidth, kFlagHeight);
+
+        RenderAmericanFlag(image, kFlagWidth, kFlagHeight);
+        SaveImageTGA("result/flagUS.tga", image, kFlagWidth, kFlagHeight);
 
 
         // Fractals
