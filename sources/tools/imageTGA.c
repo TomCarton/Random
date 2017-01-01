@@ -45,6 +45,7 @@ void SaveImageTGA(char *filename, unsigned char *image, int width, int height)
 	header.width = width;
 	header.height = height;
 	header.bitsperpixel = 24;
+	header.imagedescriptor = 0x20;
 	fwrite(&header, 1, sizeof(TGA_HEADER), outputFile);
 
 	unsigned char *data = malloc(width * height * 3);
