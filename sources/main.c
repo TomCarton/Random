@@ -8,8 +8,8 @@
 #include "render/renderFractal.h"
 
 
-static const unsigned int kWidth = 800;
-static const unsigned int kHeight = 600;
+static const unsigned int kWidth = 480;
+static const unsigned int kHeight = 360;
 
 static const unsigned int kFlagWidth = 48;
 static const unsigned int kFlagHeight = 32;
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 
     // Mandelbrot set
     params.mode = FractalModeMandelbrot;
-    params.xMin = -2.1; params.xMax = 0.93;
+    params.xMin = -2.2; params.xMax = 1.03;
     params.yMin = -1.33; params.yMax = 1.33;
 
     RenderFractal(params, image, kWidth, kHeight);
