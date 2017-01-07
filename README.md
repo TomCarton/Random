@@ -11,8 +11,6 @@ Some random rendering code made from scratch to ensure reflexes are still there 
 
 	![](https://github.com/TomCarton/Rendering/blob/master/result/julia.png)
 
-+ **Julia set #2**
-
 	![](https://github.com/TomCarton/Rendering/blob/master/result/julia2.png)
 
 #Country flags
