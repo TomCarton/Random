@@ -8,7 +8,7 @@
 #include "image.h"
 
 
-void SaveImagePPM(char *filename, unsigned char *image, int width, int height)
+void SaveImagePPM(char *filename, unsigned char *image, unsigned int width, unsigned int height)
 {
 	FILE *outputFile = fopen(filename, "w");
 

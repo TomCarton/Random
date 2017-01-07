@@ -151,8 +151,7 @@ void pngout_rgb(struct pngout *s, uint8_t r, uint8_t g, uint8_t b)
 }
 
 
-
-void SaveImagePNG(char *filename, unsigned char *image, int width, int height)
+void SaveImagePNG(char *filename, unsigned char *image, unsigned int width, unsigned int height)
 {
     struct pngout s;
 
