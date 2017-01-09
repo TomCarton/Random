@@ -68,18 +68,30 @@ void RenderAmericanFlag(unsigned char *buffer, unsigned int width, unsigned int 
 		unsigned int y = k / width;
 		unsigned int x = k % width;
 
+        // blue square
 		if (x <= rw && y <= rh)
 		{
-			*buffer++ = 60;
-			*buffer++ = 60;
-			*buffer++ = 110;
+            if ((x % (rw / 6) == 3) && (y % (rh / 5) == 2))
+            {
+                *buffer++ = 255;
+                *buffer++ = 255;
+                *buffer++ = 255;
+            }
+            else
+            {
+                *buffer++ = 60;
+                *buffer++ = 60;
+                *buffer++ = 110;
+            }
 		}
+        // white stripe
 		else if ((y * 13 / height) & 1)
 		{
 			*buffer++ = 255;
 			*buffer++ = 255;
 			*buffer++ = 255;
 		}
+        // red stripe
 		else
 		{
 			*buffer++ = 178;

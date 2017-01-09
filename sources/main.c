@@ -6,13 +6,14 @@
 #include "tools/image.h"
 #include "render/renderCountryFlag.h"
 #include "render/renderFractal.h"
+#include "render/renderSquareTile.h"
 
 
 static const unsigned int kWidth = 480;
 static const unsigned int kHeight = 360;
 
-static const unsigned int kFlagWidth = 48;
-static const unsigned int kFlagHeight = 32;
+static const unsigned int kFlagWidth = 48 * 2;
+static const unsigned int kFlagHeight = 32 * 2;
 
 
 int main(int argc, char *argv[])
@@ -69,6 +70,12 @@ int main(int argc, char *argv[])
     reducedImage = Downsize(image, kWidth << 1, kHeight << 1);
     SaveImagePNG("result/julia2.png", reducedImage, kWidth, kHeight);
     free(reducedImage);
+
+
+    // other
+    RenderSquareTile(image, kWidth, kHeight);
+    SaveImagePNG("result/squareTile.png", image, kWidth, kHeight);
+
 
     free(image);
 

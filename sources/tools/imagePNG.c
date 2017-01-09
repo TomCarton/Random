@@ -101,13 +101,13 @@ static void b8s(struct pngout *s, const uint8_t *b, size_t n)
 static void start_chunk(struct pngout *s, const char *typecode, uint32_t size)
 {
     be32(s, size);
-    s->crc32 = -1;
+    s->crc32 = 0xFFFFFFFF;
     b8s(s, (const uint8_t *)typecode, 4);
 }
 
 static void end_chunk(struct pngout *s)
 {
-    be32(s, s->crc32 ^ -1);
+    be32(s, s->crc32 ^ 0xFFFFFFFF);
 }
 
 
@@ -133,6 +133,7 @@ void SaveImagePNG(char *filename, unsigned char *image, unsigned int width, unsi
     b8s(&s, rgb, sizeof(rgb));
     end_chunk(&s);
 
+    // IDAT
     start_chunk(&s, "IDAT", 2 + height * (5 + bpl) + 4);
     b8(&s, 0x78);
     b8(&s, 0x01);
@@ -162,6 +163,7 @@ void SaveImagePNG(char *filename, unsigned char *image, unsigned int width, unsi
     be32(&s, (s.s2 << 16) + s.s1);
     end_chunk(&s);
 
+    // IEND
     start_chunk(&s, "IEND", 0);
     end_chunk(&s);
     
