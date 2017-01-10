@@ -22,4 +22,6 @@ Some random rendering code made from scratch to ensure reflexes are still there 
 + <kbd>![](https://github.com/TomCarton/Rendering/blob/master/result/flagFR.png)</kbd>
 <kbd>![](https://github.com/TomCarton/Rendering/blob/master/result/flagJP.png)</kbd>
 <kbd>![](https://github.com/TomCarton/Rendering/blob/master/result/flagUS.png)</kbd>
+<kbd>![](https://github.com/TomCarton/Rendering/blob/master/result/flagCH.png)</kbd>
 <kbd>![](https://github.com/TomCarton/Rendering/blob/master/result/flagFI.png)</kbd>
+<kbd>![](https://github.com/TomCarton/Rendering/blob/master/result/flagSE.png)</kbd>

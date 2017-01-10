@@ -12,8 +12,8 @@
 static const unsigned int kWidth = 480;
 static const unsigned int kHeight = 360;
 
-static const unsigned int kFlagWidth = 48;
-static const unsigned int kFlagHeight = 32;
+static const unsigned int kFlagWidth = 480;
+static const unsigned int kFlagHeight = 320;
 
 
 int main(int argc, char *argv[])
@@ -37,9 +37,24 @@ int main(int argc, char *argv[])
     SaveImagePNG("result/flagUS.png", reducedImage, kFlagWidth, kFlagHeight);
     free(reducedImage);
 
+    RenderSwissFlag(image, kFlagWidth << 1, kFlagHeight << 1);
+    reducedImage = Downsize(image, kFlagWidth << 1, kFlagHeight << 1);
+    SaveImagePNG("result/flagCH.png", reducedImage, kFlagWidth, kFlagHeight);
+    free(reducedImage);
+
+    RenderGermanFlag(image, kFlagWidth << 1, kFlagHeight << 1);
+    reducedImage = Downsize(image, kFlagWidth << 1, kFlagHeight << 1);
+    SaveImagePNG("result/flagDE.png", reducedImage, kFlagWidth, kFlagHeight);
+    free(reducedImage);
+
     RenderFinnishFlag(image, kFlagWidth << 1, kFlagHeight << 1);
     reducedImage = Downsize(image, kFlagWidth << 1, kFlagHeight << 1);
     SaveImagePNG("result/flagFI.png", reducedImage, kFlagWidth, kFlagHeight);
+    free(reducedImage);
+
+    RenderSwedishFlag(image, kFlagWidth << 1, kFlagHeight << 1);
+    reducedImage = Downsize(image, kFlagWidth << 1, kFlagHeight << 1);
+    SaveImagePNG("result/flagSE.png", reducedImage, kFlagWidth, kFlagHeight);
     free(reducedImage);
 
 
