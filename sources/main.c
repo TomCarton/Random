@@ -12,8 +12,8 @@
 static const unsigned int kWidth = 480;
 static const unsigned int kHeight = 360;
 
-static const unsigned int kFlagWidth = 480;
-static const unsigned int kFlagHeight = 320;
+static const unsigned int kFlagWidth = 48;
+static const unsigned int kFlagHeight = 32;
 
 
 int main(int argc, char *argv[])
