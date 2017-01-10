@@ -23,6 +23,10 @@ void RenderFlag(CountryFlagType type, unsigned char *buffer, unsigned int width,
 		case kCountryFlagAmerican:
 			RenderAmericanFlag(buffer, width, height);
 			break;
+
+		case kCountryFlagFinnish:
+			RenderFinnishFlag(buffer, width, height);
+			break;
 	}
 }
 
@@ -98,5 +102,25 @@ void RenderAmericanFlag(unsigned char *buffer, unsigned int width, unsigned int 
 			*buffer++ = 34;
 			*buffer++ = 52;
 		}
+	}
+}
+
+void RenderFinnishFlag(unsigned char *buffer, unsigned int width, unsigned int height)
+{
+	unsigned int left = 5 * width / 18;
+	unsigned int right = 8 * width / 18;
+	unsigned int up = 4 * height / 11;
+	unsigned int down = 7 * height / 11;
+
+	for (unsigned int k = 0; k < width * height; ++k)
+	{
+		unsigned int x = k % width;
+		unsigned int y = k / width;
+
+		int c = ((x >= left && x <= right) || (y >= up && y <= down)) ? 0 : 255;
+
+		*buffer++ = c ?: 0;
+		*buffer++ = c ?: 71;
+		*buffer++ = c ?: 186;
 	}
 }
