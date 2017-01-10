@@ -7,21 +7,19 @@
 #define __RenderCountryFlag_h__
 
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wmultichar"
-
 typedef enum
 {
-	kCountryFlagFrench		= 'FR',
-	kCountryFlagJapanese 	= 'JP',
-	kCountryFlagAmerican 	= 'US',
-	kCountryFlagswiss		= 'CH',
-	kCountryFlagGerman 		= 'DE',
-	kCountryFlagFinnish 	= 'FI',
-	kCountryFlagSwedish 	= 'SE',
-} CountryFlagType;
+	kCountryFlagFrench, // 'FR',
+	kCountryFlagJapanese, // 'JP',
+	kCountryFlagAmerican, // 'US',
+	kCountryFlagSwiss, // 'CH',
+	kCountryFlagGerman, // 'DE',
+	kCountryFlagFinnish, // 'FI',
+	kCountryFlagSwedish, // 'SE',
 
-#pragma clang diagnostic pop
+	kCountryFlagCount
+
+} CountryFlagType;
 
 
 void RenderFlag(CountryFlagType type, unsigned char *buffer, unsigned int width, unsigned int height);

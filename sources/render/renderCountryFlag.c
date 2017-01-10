@@ -24,7 +24,7 @@ void RenderFlag(CountryFlagType type, unsigned char *buffer, unsigned int width,
 			RenderAmericanFlag(buffer, width, height);
 			break;
 
-		case kCountryFlagswiss:
+		case kCountryFlagSwiss:
 			RenderSwissFlag(buffer, width, height);
 			break;
 
@@ -38,6 +38,9 @@ void RenderFlag(CountryFlagType type, unsigned char *buffer, unsigned int width,
 
 		case kCountryFlagSwedish:
 			RenderSwedishFlag(buffer, width, height);
+			break;
+
+		default:
 			break;
 	}
 }

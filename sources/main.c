@@ -15,47 +15,31 @@ static const unsigned int kHeight = 360;
 static const unsigned int kFlagWidth = 48;
 static const unsigned int kFlagHeight = 32;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wmultichar"
+
+static const unsigned char kCountryFlagNames[][3] = { "FR", "JP", "US", "CH", "DE", "FI", "SE" };
+
+#pragma clang diagnostic pop
+
 
 int main(int argc, char *argv[])
 {
     unsigned char *image = malloc(kWidth * kHeight * 4 * 3);
     unsigned char *reducedImage = NULL;
 
+
     // Country flags
-    RenderFrenchFlag(image, kFlagWidth << 1, kFlagHeight << 1);
-    reducedImage = Downsize(image, kFlagWidth << 1, kFlagHeight << 1);
-    SaveImagePNG("result/flagFR.png", reducedImage, kFlagWidth, kFlagHeight);
-    free(reducedImage);
+	char imageFilename[] = "result/flagXX.png"; 
+    for (unsigned int k = 0; k < kCountryFlagCount; ++k)
+    {
+    	RenderFlag(k, image, kFlagWidth << 1, kFlagHeight << 1);
+	    reducedImage = Downsize(image, kFlagWidth << 1, kFlagHeight << 1);
 
-    RenderJapaneseFlag(image, kFlagWidth << 1, kFlagHeight << 1);
-    reducedImage = Downsize(image, kFlagWidth << 1, kFlagHeight << 1);
-    SaveImagePNG("result/flagJP.png", reducedImage, kFlagWidth, kFlagHeight);
-    free(reducedImage);
-
-    RenderAmericanFlag(image, kFlagWidth << 1, kFlagHeight << 1);
-    reducedImage = Downsize(image, kFlagWidth << 1, kFlagHeight << 1);
-    SaveImagePNG("result/flagUS.png", reducedImage, kFlagWidth, kFlagHeight);
-    free(reducedImage);
-
-    RenderSwissFlag(image, kFlagWidth << 1, kFlagHeight << 1);
-    reducedImage = Downsize(image, kFlagWidth << 1, kFlagHeight << 1);
-    SaveImagePNG("result/flagCH.png", reducedImage, kFlagWidth, kFlagHeight);
-    free(reducedImage);
-
-    RenderGermanFlag(image, kFlagWidth << 1, kFlagHeight << 1);
-    reducedImage = Downsize(image, kFlagWidth << 1, kFlagHeight << 1);
-    SaveImagePNG("result/flagDE.png", reducedImage, kFlagWidth, kFlagHeight);
-    free(reducedImage);
-
-    RenderFinnishFlag(image, kFlagWidth << 1, kFlagHeight << 1);
-    reducedImage = Downsize(image, kFlagWidth << 1, kFlagHeight << 1);
-    SaveImagePNG("result/flagFI.png", reducedImage, kFlagWidth, kFlagHeight);
-    free(reducedImage);
-
-    RenderSwedishFlag(image, kFlagWidth << 1, kFlagHeight << 1);
-    reducedImage = Downsize(image, kFlagWidth << 1, kFlagHeight << 1);
-    SaveImagePNG("result/flagSE.png", reducedImage, kFlagWidth, kFlagHeight);
-    free(reducedImage);
+	    sprintf(imageFilename, "result/flag%s.png", kCountryFlagNames[k]);
+	    SaveImagePNG(imageFilename, reducedImage, kFlagWidth, kFlagHeight);
+    	free(reducedImage);
+    }
 
 
     // Fractals
