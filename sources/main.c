@@ -76,9 +76,9 @@ int main(int argc, char *argv[])
     free(reducedImage);
 
 
-    // other
-    RenderSquareTile(image, kWidth, kHeight);
-    SaveImagePNG("result/squareTile.png", image, kWidth, kHeight);
+    // Square tile
+    RenderSquareTile(image, 512, 512);
+    SaveImagePNG("result/squareTile.png", image, 512, 512);
 
 
     free(image);

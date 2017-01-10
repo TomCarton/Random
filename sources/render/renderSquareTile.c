@@ -14,7 +14,10 @@ void RenderSquareTile(unsigned char *buffer, unsigned int width, unsigned int he
     {
         for (int y = 0; y < height; ++y)
         {
-            unsigned char c = x & (y - 2*(x^y) + y) & x;
+        	unsigned int i = x * 255 / width;
+        	unsigned int j = y * 255 / height;
+
+            unsigned char c = j & (i - 2 * (j ^ i) + i) & j;
 
             *buffer++ = c;
             *buffer++ = c;
